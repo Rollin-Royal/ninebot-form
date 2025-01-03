@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ninebot Service Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+        select, input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <form id="ninebotForm">
+        <h1>Ninebot Service Request</h1>
+
+        <label for="model">Select Your Ninebot Model</label>
+        <select id="model" name="model" required>
+            <option value="">-- Select Model --</option>
+            <option value="ES1">ES1</option>
+            <option value="ES2">ES2</option>
+            <option value="ES3">ES3</option>
+            <option value="ES4">ES4</option>
+            <option value="E22">E22</option>
+            <option value="E25">E25</option>
+            <option value="E45">E45</option>
+            <option value="Max G30">Max G30</option>
+            <option value="Max G30LP">Max G30LP</option>
+            <option value="F20">F20</option>
+            <option value="F25">F25</option>
+            <option value="F30">F30</option>
+            <option value="F40">F40</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <label for="service">Select Service</label>
+        <select id="service" name="service" required>
+            <option value="">-- Select Service --</option>
+            <option value="Speed Unlock">Speed Unlock</option>
+            <option value="Repairs">Repairs</option>
+            <option value="Modifications">Modifications</option>
+        </select>
+
+        <div id="speedUnlockOptions" class="hidden">
+            <label for="speedTier">Select Speed Unlock Tier</label>
+            <select id="speedTier" name="speedTier">
+                <option value="">-- Select Tier --</option>
+                <option value="Tier 1">Tier 1 (100% Speed Unlock)</option>
+                <option value="Tier 2">Tier 2 (60% Speed Unlock)</option>
+            </select>
+        </div>
+
+        <label for="version">Version/Update (Optional)</label>
+        <input type="text" id="version" name="version" placeholder="Enter your version/update">
+
+        <label for="details">Additional Details</label>
+        <textarea id="details" name="details" rows="4" placeholder="Describe your issue or request"></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        document.getElementById('service').addEventListener('change', function () {
+            const speedUnlockOptions = document.getElementById('speedUnlockOptions');
+            if (this.value === 'Speed Unlock') {
+                speedUnlockOptions.classList.remove('hidden');
+            } else {
+                speedUnlockOptions.classList.add('hidden');
+            }
+        });
+
+        document.getElementById('ninebotForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            alert('Form submitted! Thank you for your request.');
+        });
+    </script>
+</body>
+</html>
