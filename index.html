@@ -3,21 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rollin' Royal - Ninebot Service Request</title>
+    <title>Rollin' Royal - Raise a Service Ticket</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
-            background-color: #f3f4f6;
-            background-image: url('https://via.placeholder.com/1500x800.png?text=Dubai+Sunset+Background');
-            background-size: cover;
+            background-color: #d3d3d3;
             color: #333;
         }
         form {
             max-width: 600px;
             margin: 20px auto;
             padding: 20px;
-            background: rgba(255, 255, 255, 0.9);
+            background: #ffffff;
             border-radius: 8px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
@@ -57,8 +55,8 @@
     </style>
 </head>
 <body>
-    <form action="https://formsubmit.co/rayiou1@hotmail.com" method="POST" enctype="multipart/form-data">
-        <h1>Rollin' Royal - Ninebot Service Request</h1>
+    <form action="https://formsubmit.co/4b9b9b4128d42b129dd66f278a1891c3" method="POST" enctype="multipart/form-data" id="serviceForm">
+        <h1>Raise a Service Ticket</h1>
 
         <label for="fullName">Full Name</label>
         <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
@@ -82,16 +80,10 @@
             <option value="Ninebot E22">Ninebot E22</option>
             <option value="Ninebot E25">Ninebot E25</option>
             <option value="Ninebot E45">Ninebot E45</option>
-            <option value="Ninebot E2">Ninebot E2</option>
-            <option value="Ninebot E4">Ninebot E4</option>
-            <option value="Ninebot D18">Ninebot D18</option>
-            <option value="Ninebot D28">Ninebot D28</option>
-            <option value="Ninebot D38">Ninebot D38</option>
             <option value="Ninebot F20">Ninebot F20</option>
             <option value="Ninebot F25">Ninebot F25</option>
             <option value="Ninebot F30">Ninebot F30</option>
             <option value="Ninebot F40">Ninebot F40</option>
-            <option value="Ninebot F65">Ninebot F65</option>
             <option value="Ninebot H30">Ninebot H30</option>
             <option value="Ninebot H45">Ninebot H45</option>
             <option value="Other">Other</option>
@@ -139,6 +131,12 @@
             } else {
                 otherModel.classList.add('hidden');
             }
+        });
+
+        document.getElementById('serviceForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            alert("Thank you for your submission! You will receive an email response within 24 hours. Please check your junk/spam folder if you don’t see it. The response will include a proposal or further instructions. We may also contact you by phone.");
+            this.submit();
         });
     </script>
 </body>
