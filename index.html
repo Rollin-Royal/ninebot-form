@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rollin' Royal - Raise a Service Ticket</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -51,6 +52,18 @@
         }
         .hidden {
             display: none;
+        }
+        .tiktok-link {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 14px;
+        }
+        .tiktok-link a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .tiktok-link a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -119,6 +132,10 @@
 
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_subject" value="New Ninebot Service Request">
+
+        <div class="tiktok-link">
+            <p>Follow us on TikTok for updates and tutorials: <a href="https://www.tiktok.com/@rollin.royal" target="_blank">@rollin.royal</a></p>
+        </div>
 
         <button type="submit">Submit</button>
     </form>
