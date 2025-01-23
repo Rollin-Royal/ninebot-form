@@ -13,163 +13,158 @@
             padding: 0;
             background-color: #f5f5f7;
             color: #1c1c1e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Main Wrapper */
+        .main-wrapper {
+            width: 95%;
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
         }
 
         /* Navigation Tabs */
         .tabs {
             display: flex;
-            justify-content: center;
-            background-color: #ffffff;
-            padding: 10px;
-            border-bottom: 1px solid #d1d1d6;
+            justify-content: space-around;
+            background-color: #007aff;
+            padding: 10px 0;
+            border-bottom: 2px solid #005ecb;
         }
 
         .tab-link {
-            padding: 10px 20px;
-            margin: 0 5px;
-            border: none;
-            background-color: #f9f9fa;
-            color: #007aff;
+            flex: 1;
+            text-align: center;
+            padding: 12px 0;
             font-size: 16px;
             font-weight: 600;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: background-color 0.2s ease-in-out;
-        }
-
-        .tab-link.active {
-            background-color: #007aff;
             color: white;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         .tab-link:hover {
             background-color: #005ecb;
-            color: white;
+            color: #e0e0ff;
         }
 
-        /* Main Content Area */
-        .container {
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 20px;
-            background: #ffffff;
-            border-radius: 16px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        .tab-link.active {
+            background-color: #005ecb;
+            color: #ffffff;
         }
 
-        /* Tab Content */
+        /* Content Area */
         .tab-content {
             display: none;
+            padding: 20px 30px;
+            text-align: center;
+            animation: fadeIn 0.3s ease-in-out;
         }
 
         .tab-content.active {
             display: block;
         }
 
-        /* Form Styles */
-        label {
-            display: block;
-            margin: 10px 0 5px;
-            font-size: 16px;
-            font-weight: 500;
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Headings */
+        h1 {
+            font-size: 24px;
+            font-weight: bold;
             color: #1c1c1e;
+            margin-bottom: 10px;
         }
 
-        select, input, textarea {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 15px;
-            border: 1px solid #d1d1d6;
-            border-radius: 10px;
+        p {
             font-size: 16px;
-            background-color: #f9f9fa;
-            color: #1c1c1e;
+            color: #6b6b6b;
+            margin: 10px 0;
         }
 
-        button {
-            display: block;
-            width: 100%;
-            padding: 12px;
-            font-size: 16px;
-            font-weight: 600;
-            color: white;
-            background-color: #007aff;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #005ecb;
-        }
-
+        /* Footer */
         .footer {
             text-align: center;
-            margin-top: 20px;
+            padding: 10px;
             font-size: 12px;
             color: #8e8e93;
+            border-top: 1px solid #e0e0e0;
+            background-color: #f9f9fa;
         }
     </style>
 </head>
 <body>
-    <div class="tabs">
-        <button class="tab-link active" data-tab="home">Home</button>
-        <button class="tab-link" data-tab="diagnose">Diagnose My eScooter</button>
-        <button class="tab-link" data-tab="parts">Parts Finder</button>
-        <button class="tab-link" data-tab="tickets">Ticket Tracker</button>
-    </div>
+    <div class="main-wrapper">
+        <!-- Navigation Tabs -->
+        <div class="tabs">
+            <button class="tab-link active" data-tab="home">Home</button>
+            <button class="tab-link" data-tab="diagnose">Diagnose My eScooter</button>
+            <button class="tab-link" data-tab="parts">Parts Finder</button>
+            <button class="tab-link" data-tab="tickets">Ticket Tracker</button>
+        </div>
 
-    <div id="tab-content">
-        <!-- Home Tab -->
-        <div class="tab-content active" id="home">
-            <div class="container">
+        <!-- Tab Content -->
+        <div id="tab-content">
+            <!-- Home Tab -->
+            <div class="tab-content active" id="home">
                 <h1>Welcome to Rollin' Royal Dashboard</h1>
                 <p>Select a tab above to get started!</p>
             </div>
-        </div>
 
-        <!-- Diagnose My eScooter -->
-        <div class="tab-content" id="diagnose">
-            <div class="container">
+            <!-- Diagnose Tab -->
+            <div class="tab-content" id="diagnose">
                 <h1>Diagnose My eScooter</h1>
-                <p>Coming soon: Interactive troubleshooting tools to diagnose issues.</p>
+                <p>Coming soon: An interactive troubleshooting tool.</p>
             </div>
-        </div>
 
-        <!-- Parts Finder -->
-        <div class="tab-content" id="parts">
-            <div class="container">
+            <!-- Parts Finder Tab -->
+            <div class="tab-content" id="parts">
                 <h1>Parts Finder</h1>
-                <p>Browse our parts catalog to find what you need for your eScooter.</p>
-                <!-- Add Shopify Buy Button Integration here -->
+                <p>Explore and purchase parts for your Ninebot eScooter.</p>
             </div>
-        </div>
 
-        <!-- Ticket Tracker -->
-        <div class="tab-content" id="tickets">
-            <div class="container">
+            <!-- Ticket Tracker Tab -->
+            <div class="tab-content" id="tickets">
                 <h1>Ticket Tracker</h1>
-                <p>Check the status of your service tickets here.</p>
+                <p>View the status of your submitted service tickets here.</p>
             </div>
         </div>
-    </div>
 
-    <div class="footer">
-        <p>© 2025 Rollin' Royal. All rights reserved.</p>
+        <!-- Footer -->
+        <div class="footer">
+            <p>© 2025 Rollin' Royal. All rights reserved.</p>
+        </div>
     </div>
 
     <script>
-        // Tab switching logic
+        // Tab switching functionality
         const tabs = document.querySelectorAll('.tab-link');
-        const tabContents = document.querySelectorAll('.tab-content');
+        const contents = document.querySelectorAll('.tab-content');
 
         tabs.forEach(tab => {
             tab.addEventListener('click', () => {
                 // Remove active class from all tabs and contents
                 tabs.forEach(t => t.classList.remove('active'));
-                tabContents.forEach(content => content.classList.remove('active'));
+                contents.forEach(content => content.classList.remove('active'));
 
-                // Add active class to clicked tab and its content
+                // Add active class to the clicked tab and its content
                 tab.classList.add('active');
                 document.getElementById(tab.dataset.tab).classList.add('active');
             });
