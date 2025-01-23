@@ -6,139 +6,175 @@
     <title>Rollin' Royal - Raise a Service Ticket</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <style>
+        /* Base Styles */
         body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            background-color: #d3d3d3;
-            color: #333;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f7;
+            color: #1c1c1e;
         }
-        form {
-            max-width: 600px;
-            margin: 20px auto;
+
+        /* Centered Container */
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
             padding: 20px;
             background: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         }
+
+        /* Heading */
         h1 {
+            font-size: 28px;
+            font-weight: 600;
             text-align: center;
+            color: #1c1c1e;
             margin-bottom: 20px;
-            color: #1a202c;
         }
+
+        /* Labels */
         label {
             display: block;
             margin: 10px 0 5px;
-            font-weight: bold;
+            font-size: 16px;
+            font-weight: 500;
+            color: #1c1c1e;
         }
+
+        /* Inputs, Selects, and Textareas */
         select, input, textarea {
             width: 100%;
-            padding: 8px;
+            padding: 12px;
             margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
+            border: 1px solid #d1d1d6;
+            border-radius: 10px;
+            font-size: 16px;
+            background-color: #f9f9fa;
+            color: #1c1c1e;
         }
+
+        /* Submit Button */
         button {
             display: block;
             width: 100%;
-            padding: 10px;
-            background-color: #007bff;
-            color: white;
+            padding: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #ffffff;
+            background-color: #007aff;
             border: none;
-            border-radius: 4px;
+            border-radius: 10px;
             cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
         }
+
         button:hover {
-            background-color: #0056b3;
+            background-color: #005ecb;
         }
+
+        /* Hidden Section */
         .hidden {
             display: none;
         }
-        .tiktok-link {
+
+        /* Social Media Links */
+        .social-links {
             text-align: center;
-            margin: 20px 0;
+            margin-top: 20px;
             font-size: 14px;
         }
-        .tiktok-link a {
-            color: #007bff;
+
+        .social-links a {
+            color: #007aff;
             text-decoration: none;
+            margin: 0 10px;
         }
-        .tiktok-link a:hover {
+
+        .social-links a:hover {
             text-decoration: underline;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 12px;
+            color: #8e8e93;
         }
     </style>
 </head>
 <body>
-    <form action="https://formsubmit.co/4b9b9b4128d42b129dd66f278a1891c3" method="POST" enctype="multipart/form-data" id="serviceForm">
-        <h1>Raise a Service Ticket</h1>
+    <div class="container">
+        <form action="https://formsubmit.co/4b9b9b4128d42b129dd66f278a1891c3" method="POST" enctype="multipart/form-data" id="serviceForm">
+            <h1>Raise a Service Ticket</h1>
 
-        <label for="fullName">Full Name</label>
-        <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
 
-        <label for="email">Email Address</label>
-        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
 
-        <label for="dob">Year of Birth</label>
-        <input type="number" id="dob" name="dob" placeholder="Enter your year of birth" required>
+            <label for="dob">Year of Birth</label>
+            <input type="number" id="dob" name="dob" placeholder="Enter your year of birth" required>
 
-        <label for="model">Select Your Ninebot Model</label>
-        <select id="model" name="model" required>
-            <option value="">-- Select Model --</option>
-            <option value="Ninebot G30">Ninebot G30</option>
-            <option value="Ninebot G30P">Ninebot G30P</option>
-            <option value="Ninebot G30LP">Ninebot G30LP</option>
-            <option value="Ninebot G65">Ninebot G65</option>
-            <option value="Ninebot G66">Ninebot G66</option>
-            <option value="Ninebot G70">Ninebot G70</option>
-            <option value="Ninebot G2 Max">Ninebot G2 Max</option>
-            <option value="Ninebot E22">Ninebot E22</option>
-            <option value="Ninebot E25">Ninebot E25</option>
-            <option value="Ninebot E45">Ninebot E45</option>
-            <option value="Ninebot F20">Ninebot F20</option>
-            <option value="Ninebot F25">Ninebot F25</option>
-            <option value="Ninebot F30">Ninebot F30</option>
-            <option value="Ninebot F40">Ninebot F40</option>
-            <option value="Ninebot H30">Ninebot H30</option>
-            <option value="Ninebot H45">Ninebot H45</option>
-            <option value="Other">Other</option>
-        </select>
+            <label for="model">Select Your Ninebot Model</label>
+            <select id="model" name="model" required>
+                <option value="">-- Select Model --</option>
+                <option value="Ninebot G30">Ninebot G30</option>
+                <option value="Ninebot G30P">Ninebot G30P</option>
+                <option value="Ninebot G30LP">Ninebot G30LP</option>
+                <option value="Ninebot G65">Ninebot G65</option>
+                <option value="Ninebot F40">Ninebot F40</option>
+                <option value="Other">Other</option>
+            </select>
 
-        <div id="otherModel" class="hidden">
-            <label for="otherModelInput">Please Specify Your Scooter Model</label>
-            <input type="text" id="otherModelInput" name="otherModelInput" placeholder="Enter your scooter model">
+            <div id="otherModel" class="hidden">
+                <label for="otherModelInput">Please Specify Your Scooter Model</label>
+                <input type="text" id="otherModelInput" name="otherModelInput" placeholder="Enter your scooter model">
+            </div>
+
+            <label for="service">Select Service</label>
+            <select id="service" name="service" required>
+                <option value="">-- Select Service --</option>
+                <option value="Speed Unlock">Speed Unlock</option>
+                <option value="Repairs">Repairs</option>
+                <option value="Modifications">Modifications</option>
+            </select>
+
+            <label for="referral">Where Did You Hear About Us?</label>
+            <select id="referral" name="referral" required>
+                <option value="">-- Select --</option>
+                <option value="TikTok">TikTok</option>
+                <option value="Twitter">Twitter</option>
+                <option value="Facebook Marketplace">Facebook Marketplace</option>
+                <option value="Friend/Referral">Friend/Referral</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <label for="details">Additional Details (Optional)</label>
+            <textarea id="details" name="details" rows="4" placeholder="Describe your request"></textarea>
+
+            <label for="upload">Upload Photos or Videos (Optional)</label>
+            <input type="file" id="upload" name="upload" accept="image/*,video/*">
+
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_subject" value="New Ninebot Service Request">
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <div class="social-links">
+            <p>Follow us for updates and tips:</p>
+            <a href="https://www.tiktok.com/@rollin.royal" target="_blank">TikTok</a>
+            <a href="https://x.com/Rollin_Royal" target="_blank">Twitter</a>
         </div>
 
-        <label for="service">Select Service</label>
-        <select id="service" name="service" required>
-            <option value="">-- Select Service --</option>
-            <option value="Speed Unlock">Speed Unlock</option>
-            <option value="Repairs">Repairs</option>
-            <option value="Modifications">Modifications</option>
-        </select>
-
-        <label for="referral">Where Did You Hear About Us?</label>
-        <select id="referral" name="referral" required>
-            <option value="">-- Select --</option>
-            <option value="TikTok">TikTok</option>
-            <option value="Facebook Marketplace">Facebook Marketplace</option>
-            <option value="Friend/Referral">Friend/Referral</option>
-            <option value="Other">Other</option>
-        </select>
-
-        <label for="details">Additional Details (Optional)</label>
-        <textarea id="details" name="details" rows="4" placeholder="Describe your request"></textarea>
-
-        <label for="upload">Upload Photos or Videos (Optional)</label>
-        <input type="file" id="upload" name="upload" accept="image/*,video/*">
-
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_subject" value="New Ninebot Service Request">
-
-        <div class="tiktok-link">
-            <p>Follow us on TikTok for updates and tutorials: <a href="https://www.tiktok.com/@rollin.royal" target="_blank">@rollin.royal</a></p>
+        <div class="footer">
+            <p>© 2025 Rollin' Royal. All rights reserved.</p>
         </div>
-
-        <button type="submit">Submit</button>
-    </form>
+    </div>
 
     <script>
         document.getElementById('model').addEventListener('change', function () {
@@ -152,7 +188,7 @@
 
         document.getElementById('serviceForm').addEventListener('submit', function (event) {
             event.preventDefault();
-            alert("Thank you for your submission! You will receive an email response within 24 hours. Please check your junk/spam folder if you don’t see it. The response will include a proposal or further instructions. We may also contact you by phone.");
+            alert("Thank you for your submission! We will respond within 24 hours.");
             this.submit();
         });
     </script>
