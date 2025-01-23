@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rollin' Royal - Raise a Service Ticket</title>
+    <title>Rollin' Royal - Dashboard</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <style>
         /* Base Styles */
@@ -15,7 +15,39 @@
             color: #1c1c1e;
         }
 
-        /* Centered Container */
+        /* Navigation Tabs */
+        .tabs {
+            display: flex;
+            justify-content: center;
+            background-color: #ffffff;
+            padding: 10px;
+            border-bottom: 1px solid #d1d1d6;
+        }
+
+        .tab-link {
+            padding: 10px 20px;
+            margin: 0 5px;
+            border: none;
+            background-color: #f9f9fa;
+            color: #007aff;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+        }
+
+        .tab-link.active {
+            background-color: #007aff;
+            color: white;
+        }
+
+        .tab-link:hover {
+            background-color: #005ecb;
+            color: white;
+        }
+
+        /* Main Content Area */
         .container {
             max-width: 800px;
             margin: 40px auto;
@@ -25,16 +57,16 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         }
 
-        /* Heading */
-        h1 {
-            font-size: 28px;
-            font-weight: 600;
-            text-align: center;
-            color: #1c1c1e;
-            margin-bottom: 20px;
+        /* Tab Content */
+        .tab-content {
+            display: none;
         }
 
-        /* Labels */
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Form Styles */
         label {
             display: block;
             margin: 10px 0 5px;
@@ -43,7 +75,6 @@
             color: #1c1c1e;
         }
 
-        /* Inputs, Selects, and Textareas */
         select, input, textarea {
             width: 100%;
             padding: 12px;
@@ -55,48 +86,23 @@
             color: #1c1c1e;
         }
 
-        /* Submit Button */
         button {
             display: block;
             width: 100%;
             padding: 12px;
             font-size: 16px;
             font-weight: 600;
-            color: #ffffff;
+            color: white;
             background-color: #007aff;
             border: none;
             border-radius: 10px;
             cursor: pointer;
-            transition: background-color 0.2s ease-in-out;
         }
 
         button:hover {
             background-color: #005ecb;
         }
 
-        /* Hidden Section */
-        .hidden {
-            display: none;
-        }
-
-        /* Social Media Links */
-        .social-links {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 14px;
-        }
-
-        .social-links a {
-            color: #007aff;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-
-        .social-links a:hover {
-            text-decoration: underline;
-        }
-
-        /* Footer */
         .footer {
             text-align: center;
             margin-top: 20px;
@@ -106,90 +112,67 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <form action="https://formsubmit.co/4b9b9b4128d42b129dd66f278a1891c3" method="POST" enctype="multipart/form-data" id="serviceForm">
-            <h1>Raise a Service Ticket</h1>
+    <div class="tabs">
+        <button class="tab-link active" data-tab="home">Home</button>
+        <button class="tab-link" data-tab="diagnose">Diagnose My eScooter</button>
+        <button class="tab-link" data-tab="parts">Parts Finder</button>
+        <button class="tab-link" data-tab="tickets">Ticket Tracker</button>
+    </div>
 
-            <label for="fullName">Full Name</label>
-            <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
-
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
-
-            <label for="dob">Year of Birth</label>
-            <input type="number" id="dob" name="dob" placeholder="Enter your year of birth" required>
-
-            <label for="model">Select Your Ninebot Model</label>
-            <select id="model" name="model" required>
-                <option value="">-- Select Model --</option>
-                <option value="Ninebot G30">Ninebot G30</option>
-                <option value="Ninebot G30P">Ninebot G30P</option>
-                <option value="Ninebot G30LP">Ninebot G30LP</option>
-                <option value="Ninebot G65">Ninebot G65</option>
-                <option value="Ninebot F40">Ninebot F40</option>
-                <option value="Other">Other</option>
-            </select>
-
-            <div id="otherModel" class="hidden">
-                <label for="otherModelInput">Please Specify Your Scooter Model</label>
-                <input type="text" id="otherModelInput" name="otherModelInput" placeholder="Enter your scooter model">
+    <div id="tab-content">
+        <!-- Home Tab -->
+        <div class="tab-content active" id="home">
+            <div class="container">
+                <h1>Welcome to Rollin' Royal Dashboard</h1>
+                <p>Select a tab above to get started!</p>
             </div>
-
-            <label for="service">Select Service</label>
-            <select id="service" name="service" required>
-                <option value="">-- Select Service --</option>
-                <option value="Speed Unlock">Speed Unlock</option>
-                <option value="Repairs">Repairs</option>
-                <option value="Modifications">Modifications</option>
-            </select>
-
-            <label for="referral">Where Did You Hear About Us?</label>
-            <select id="referral" name="referral" required>
-                <option value="">-- Select --</option>
-                <option value="TikTok">TikTok</option>
-                <option value="Twitter">Twitter</option>
-                <option value="Facebook Marketplace">Facebook Marketplace</option>
-                <option value="Friend/Referral">Friend/Referral</option>
-                <option value="Other">Other</option>
-            </select>
-
-            <label for="details">Additional Details (Optional)</label>
-            <textarea id="details" name="details" rows="4" placeholder="Describe your request"></textarea>
-
-            <label for="upload">Upload Photos or Videos (Optional)</label>
-            <input type="file" id="upload" name="upload" accept="image/*,video/*">
-
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_subject" value="New Ninebot Service Request">
-
-            <button type="submit">Submit</button>
-        </form>
-
-        <div class="social-links">
-            <p>Follow us for updates and tips:</p>
-            <a href="https://www.tiktok.com/@rollin.royal" target="_blank">TikTok</a>
-            <a href="https://x.com/Rollin_Royal" target="_blank">Twitter</a>
         </div>
 
-        <div class="footer">
-            <p>© 2025 Rollin' Royal. All rights reserved.</p>
+        <!-- Diagnose My eScooter -->
+        <div class="tab-content" id="diagnose">
+            <div class="container">
+                <h1>Diagnose My eScooter</h1>
+                <p>Coming soon: Interactive troubleshooting tools to diagnose issues.</p>
+            </div>
+        </div>
+
+        <!-- Parts Finder -->
+        <div class="tab-content" id="parts">
+            <div class="container">
+                <h1>Parts Finder</h1>
+                <p>Browse our parts catalog to find what you need for your eScooter.</p>
+                <!-- Add Shopify Buy Button Integration here -->
+            </div>
+        </div>
+
+        <!-- Ticket Tracker -->
+        <div class="tab-content" id="tickets">
+            <div class="container">
+                <h1>Ticket Tracker</h1>
+                <p>Check the status of your service tickets here.</p>
+            </div>
         </div>
     </div>
 
-    <script>
-        document.getElementById('model').addEventListener('change', function () {
-            const otherModel = document.getElementById('otherModel');
-            if (this.value === 'Other') {
-                otherModel.classList.remove('hidden');
-            } else {
-                otherModel.classList.add('hidden');
-            }
-        });
+    <div class="footer">
+        <p>© 2025 Rollin' Royal. All rights reserved.</p>
+    </div>
 
-        document.getElementById('serviceForm').addEventListener('submit', function (event) {
-            event.preventDefault();
-            alert("Thank you for your submission! We will respond within 24 hours.");
-            this.submit();
+    <script>
+        // Tab switching logic
+        const tabs = document.querySelectorAll('.tab-link');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs and contents
+                tabs.forEach(t => t.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
+
+                // Add active class to clicked tab and its content
+                tab.classList.add('active');
+                document.getElementById(tab.dataset.tab).classList.add('active');
+            });
         });
     </script>
 </body>
