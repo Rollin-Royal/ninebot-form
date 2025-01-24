@@ -33,6 +33,7 @@
         /* Navigation Tabs */
         .tabs {
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-around;
             background-color: #007aff;
             padding: 10px 0;
@@ -65,7 +66,7 @@
         /* Content Area */
         .tab-content {
             display: none;
-            padding: 20px 30px;
+            padding: 20px 10px;
             text-align: center;
             animation: fadeIn 0.3s ease-in-out;
         }
@@ -85,18 +86,62 @@
             }
         }
 
+        /* Responsive Tables */
+        .table-container {
+            overflow-x: auto;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            text-align: center;
+            padding: 10px;
+            border: 1px solid #e0e0e0;
+            font-size: 14px;
+        }
+
+        thead tr {
+            background-color: #f5f5f7;
+            font-weight: bold;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #fafafa;
+        }
+
         /* Headings */
         h1 {
             font-size: 24px;
             font-weight: bold;
             color: #1c1c1e;
             margin-bottom: 10px;
+            text-align: center;
+        }
+
+        h2, h3 {
+            font-size: 20px;
+            font-weight: bold;
+            color: #1c1c1e;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        h3 {
+            color: #007aff;
         }
 
         p {
             font-size: 16px;
             color: #6b6b6b;
-            margin: 10px 0;
+            margin: 10px auto;
+            max-width: 700px;
+            text-align: center;
         }
 
         /* Footer */
@@ -107,6 +152,29 @@
             color: #8e8e93;
             border-top: 1px solid #e0e0e0;
             background-color: #f9f9fa;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .tab-link {
+                font-size: 14px;
+            }
+
+            th, td {
+                font-size: 12px;
+            }
+
+            h1, h2, h3 {
+                font-size: 18px;
+            }
+
+            p {
+                font-size: 14px;
+            }
         }
     </style>
 </head>
@@ -122,127 +190,45 @@
 
         <!-- Tab Content -->
         <div id="tab-content">
-            <!-- Home Tab -->
-            <div class="tab-content active" id="home">
-                <h1>Welcome to Rollin' Royal Dashboard</h1>
-                <p>Select a tab above to get started!</p>
-            </div>
+            <!-- Pricing List Tab -->
+            <div class="tab-content active" id="pricing">
+                <h1>Pricing List</h1>
+                <p>Explore and purchase parts for your Ninebot eScooter.</p>
 
-            <!-- Diagnose Tab -->
-            <div class="tab-content" id="diagnose">
-                <h1>Diagnose My eScooter</h1>
-                <p>Coming soon: An interactive troubleshooting tool.</p>
-            </div>
-
-           <!-- Pricing List Tab -->
-<div class="tab-content" id="pricing">
-    <h1>Pricing List</h1>
-    <p>Explore and purchase parts for your Ninebot eScooter.</p>
-    <h2 style="font-size: 20px; font-weight: bold; color: #1c1c1e; margin-top: 20px;">Ninebot G30 Max & Multi-Model Spare Parts Catalogue</h2>
-    
-    <!-- Main Components Table -->
-    <h3 style="font-size: 18px; font-weight: bold; color: #007aff; margin-top: 30px; text-align: center;">Main Components (Focus: G30 Max)</h3>
-    <table style="width: 90%; margin: 20px auto; border-collapse: collapse; text-align: left; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-        <thead>
-            <tr style="background-color: #f5f5f7; color: #1c1c1e;">
-                <th style="padding: 10px; border: 1px solid #e0e0e0;">Component</th>
-                <th style="padding: 10px; border: 1px solid #e0e0e0;">Description</th>
-                <th style="padding: 10px; border: 1px solid #e0e0e0;">Price</th>
-                <th style="padding: 10px; border: 1px solid #e0e0e0;">Compatibility</th>
-                <th style="padding: 10px; border: 1px solid #e0e0e0;">Availability</th>
-                <th style="padding: 10px; border: 1px solid #e0e0e0;">Notes</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td style="padding: 10px; border: 1px solid #e0e0e0;">Rear Wheel</td>
-                <td style="padding: 10px; border: 1px solid #e0e0e0;">Original Ninebot G30 Max rear wheel</td>
-                <td style="padding: 10px; border: 1px solid #e0e0e0;">$60</td>
-                <td style="padding: 10px; border: 1px solid #e0e0e0;">G30 Max</td>
-                <td style="padding: 10px; border: 1px solid #e0e0e0;">In Stock</td>
-                <td style="padding: 10px; border: 1px solid #e0e0e0;">OEM part</td>
-            </tr>
-            <tr style="background-color: #fafafa;">
-                <td style="padding: 10px; border: 1px solid #e0e0e0;">Controller</td>
-                <td style="padding: 10px; border: 1px solid #e0e0e0;">OEM controller for G30 Max</td>
-                <td style="padding: 10px; border: 1px solid #e0e0e0;">$50</td>
-                <td style="padding: 10px; border: 1px solid #e0e0e0;">G30 Max</td>
-                <td style="padding: 10px; border: 1px solid #e0e0e0;">Limited Stock</td>
-                <td style="padding: 10px; border: 1px solid #e0e0e0;">N/A</td>
-            </tr>
-            <tr>
-                <td style="padding: 10px; border: 1px solid #e0e0e0;">Battery (OEM)</td>
-                <td style="padding: 10px; border: 1px solid #e0e0e0;">High-capacity OEM battery for G30 Max</td>
-                <td style="padding: 10px; border: 1px solid #e0e0e0;">$250</td>
-                <td style="padding: 10px; border: 1px solid #e0e0e0;">G30 Max</td>
-                <td style="padding: 10px; border: 1px solid #e0e0e0;">Pre-Order</td>
-                <td style="padding: 10px; border: 1px solid #e0e0e0;">Official product</td>
-            </tr>
-        </tbody>
-    </table>
-    
-    <!-- Other Essential Parts Table -->
-    <h3 style="font-size: 18px; font-weight: bold; color: #007aff; margin-top: 30px; text-align: center;">Other Essential Parts</h3>
-    <table style="width: 90%; margin: 20px auto; border-collapse: collapse; text-align: left; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-        <thead>
-            <tr style="background-color: #f5f5f7; color: #1c1c1e;">
-                <th style="padding: 10px; border: 1px solid #e0e0e0;">Part</th>
-                <th style="padding: 10px; border: 1px solid #e0e0e0;">Description</th>
-                <th style="padding: 10px; border: 1px solid #e0e0e0;">Price</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td style="padding: 10px; border: 1px solid #e0e0e0;">Display Screen</td>
-                <td style="padding: 10px; border: 1px solid #e0e0e0;">LCD screen, G30 Max exclusive</td>
-                <td style="padding: 10px; border: 1px solid #e0e0e0;">$90</td>
-            </tr>
-            <tr style="background-color: #fafafa;">
-                <td style="padding: 10px; border: 1px solid #e0e0e0;">Brake Calipers</td>
-                <td style="padding: 10px; border: 1px solid #e0e0e0;">High-performance brakes for G30 Max & G2</td>
-                <td style="padding: 10px; border: 1px solid #e0e0e0;">$50</td>
-            </tr>
-            <tr>
-                <td style="padding: 10px; border: 1px solid #e0e0e0;">Screws (M-Series)</td>
-                <td style="padding: 10px; border: 1px solid #e0e0e0;">Universal screws, starting at $12</td>
-                <td style="padding: 10px; border: 1px solid #e0e0e0;">$12+</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <!-- Specialized Screw Kits and Assemblies Table -->
-    <h3 style="font-size: 18px; font-weight: bold; color: #007aff; margin-top: 30px; text-align: center;">Specialized Screw Kits and Assemblies</h3>
-    <table style="width: 90%; margin: 20px auto; border-collapse: collapse; text-align: left; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-        <thead>
-            <tr style="background-color: #f5f5f7; color: #1c1c1e;">
-                <th style="padding: 10px; border: 1px solid #e0e0e0;">Assembly</th>
-                <th style="padding: 10px; border: 1px solid #e0e0e0;">Part</th>
-                <th style="padding: 10px; border: 1px solid #e0e0e0;">Description</th>
-                <th style="padding: 10px; border: 1px solid #e0e0e0;">Price</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td style="padding: 10px; border: 1px solid #e0e0e0;">Deck Assembly</td>
-                <td style="padding: 10px; border: 1px solid #e0e0e0;">Inner Hex Screws (2 pcs)</td>
-                <td style="padding: 10px; border: 1px solid #e0e0e0;">Secures deck, G30 Max & G2</td>
-                <td style="padding: 10px; border: 1px solid #e0e0e0;">$12</td>
-            </tr>
-            <tr style="background-color: #fafafa;">
-                <td style="padding: 10px; border: 1px solid #e0e0e0;">Folding Mechanism</td>
-                <td style="padding: 10px; border: 1px solid #e0e0e0;">Folding Hardware Screws (2 pcs)</td>
-                <td style="padding: 10px; border: 1px solid #e0e0e0;">Combo pack for G30 Max & G2</td>
-                <td style="padding: 10px; border: 1px solid #e0e0e0;">$30</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-
-
-            <!-- Ticket Tracker Tab -->
-            <div class="tab-content" id="tickets">
-                <h1>Ticket Tracker</h1>
-                <p>View the status of your submitted service tickets here.</p>
+                <!-- Main Components Table -->
+                <h3>Main Components (Focus: G30 Max)</h3>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Component</th>
+                                <th>Description</th>
+                                <th>Price</th>
+                                <th>Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Rear Wheel</td>
+                                <td>Original Ninebot G30 Max rear wheel</td>
+                                <td>$60</td>
+                                <td>OEM part</td>
+                            </tr>
+                            <tr>
+                                <td>Controller</td>
+                                <td>OEM controller for G30 Max</td>
+                                <td>$50</td>
+                                <td>N/A</td>
+                            </tr>
+                            <tr>
+                                <td>Battery (OEM)</td>
+                                <td>High-capacity OEM battery for G30 Max</td>
+                                <td>$250</td>
+                                <td>Official product</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
 
@@ -259,11 +245,8 @@
 
         tabs.forEach(tab => {
             tab.addEventListener('click', () => {
-                // Remove active class from all tabs and contents
                 tabs.forEach(t => t.classList.remove('active'));
                 contents.forEach(content => content.classList.remove('active'));
-
-                // Add active class to the clicked tab and its content
                 tab.classList.add('active');
                 document.getElementById(tab.dataset.tab).classList.add('active');
             });
